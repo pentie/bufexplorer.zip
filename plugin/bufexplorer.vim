@@ -67,6 +67,7 @@ nmap <script> <silent> <unique> <Leader>bv :BufExplorerVerticalSplit<CR>
 command! BufExplorer :call StartBufExplorer(has ("gui") ? "drop" : "hide edit")
 command! BufExplorerHorizontalSplit :call BufExplorerHorizontalSplit()
 command! BufExplorerVerticalSplit :call BufExplorerVerticalSplit()
+command! BufExplorerToggle :call ToggleBufExplorer()
 
 " BESet {{{1
 function! s:BESet(var, default)
@@ -1130,6 +1131,14 @@ function! BufExplorer_ReSize()
   let &scrolloff = _scr
 
   call setpos(".", pres)
+endfunction
+
+function! ToggleBufExplorer()
+    if s:running == 1
+      call s:BEClose("quit")
+    else
+      call StartBufExplorer(has ("gui") ? "drop" : "hide edit")
+    endif
 endfunction
 
 " Default values {{{1
