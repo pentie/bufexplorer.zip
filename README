@@ -1,3 +1,7 @@
+CHANGES:
+    * add: BufExplorerToggle command
+
+
 This is a mirror of http://www.vim.org/scripts/script.php?script_id=42
 
 With bufexplorer, you can quickly and easily switch between buffers by using the one of the default public interfaces:
